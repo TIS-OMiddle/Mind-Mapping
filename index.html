@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>思维导图</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div class="loading" id='loading'>
+        <img src="pic/loading.gif">
+        <br/>
+        <b>处理中...</b>
+    </div>
+
+    <div class='divbuttons'>
+        <h3>当前节点:</h3>
+        <input type="text" id='textinput' value="新节点" class="nodetext"> 节点字体大小：
+        <select id="textsize">
+            <option value="14px">14</option>
+            <option value="16px">16</option>
+            <option value="18px">18</option>
+            <option value="20px">20</option>
+            <option value="22px">22</option>
+            <option value="24px">24</option>
+        </select>
+        <br/> 连线线条大小：
+        <select id="linksize">
+            <option value="2px">2</option>
+            <option value="1px">1</option>
+            <option value="3px">3</option>
+            <option value="4px">4</option>
+            <option value="5px">5</option>
+            <option value="6px">6</option>
+        </select>
+        <br/> 连线颜色：
+        <select id="linkcolor">
+            <option value="lightseagreen">海蓝色</option>
+            <option value="black">黑色</option>
+            <option value="lightcoral">小粉红</option>
+            <option value="red">红色</option>
+            <option value="gold">金色</option>
+        </select>
+        <br/>
+        <button style="padding: 5px 10px;" onclick="applyNode()">应用</button>
+        <h3>节点操作:</h3>
+        <button onclick="addNode()">+子节点</button>
+        <button onclick="rmNode()">-该节点</button>
+        <br/>
+        <button onclick='addBroNode("sup")'>+兄节点</button>
+        <button onclick='addBroNode("sub")'>+弟节点</button>
+        <br/>
+        <button onclick="setSize(100)">+间距</button>
+        <button onclick="setSize(-100)">-间距</button>
+        <br/>
+        <button onclick="toSave()">保存</button>
+        <button onclick="toLoad()">加载</button>
+        <br/>
+        <button onclick="toDownload()">下载</button>
+    </div>
+
+
+    <div class='bgdiv'>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" id="svg" width="100%" height="100%">
+        </svg>
+    </div>
+
+
+    <div id="downloadPng" class="divdownload">
+        <p style="text-align: center">建议对svg自行截图</p>
+        <canvas id='downloadPngCV'></canvas>
+        <br/>
+        <a download="思维导图" id='svgDownload' class="adownload">
+            <button onclick="svgDownload()">svg下载</button>
+        </a>
+        <a download="思维导图" id='pngDownload' class="adownload" style="margin-left: 10px;">
+            <button onclick="pngDownload()">png下载</button>
+        </a>
+        <button style="margin-left: 10px" onclick="closeDownload()">关闭</button>
+    </div>
+
+    <script src="js/main.js">
+    </script>
+</body>
+
+</html>

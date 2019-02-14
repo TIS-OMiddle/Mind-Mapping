@@ -1,0 +1,109 @@
+body {
+    background-color: lightpink;
+}
+
+.bgdiv {
+    width: 2500px;
+    height: 1500px;
+}
+
+.link {
+    fill: transparent;
+    animation: dash 2s linear;
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 0;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 100%;
+    }
+    to {
+        stroke-dashoffset: 0%;
+    }
+}
+
+.text {
+    transform: translate(12px, 4px);
+}
+
+.circle {
+    fill: gray;
+    stroke-width: 2px;
+    stroke: lightseagreen;
+    cursor: pointer;
+}
+
+.choosedcircle {
+    fill: lightblue;
+    stroke-width: 2px;
+    stroke: lightseagreen;
+    cursor: pointer;
+}
+
+svg g {
+    transition: transform 1s linear;
+}
+
+.adownload {
+    display: inline-block;
+    width: 65px;
+    height: 24px;
+    border: 1px solid #CCC;
+    background: #FFF;
+}
+
+.divdownload {
+    display: none;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    background-color: white;
+}
+
+.divbuttons {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 190px;
+    height: 455px;
+}
+
+.divbuttons button {
+    background-color: #4CAF50;
+    border: transparent solid 2px;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 90px;
+    height: 52px;
+    cursor: pointer;
+}
+
+.divbuttons button:hover {
+    border: lightblue solid 2px;
+}
+
+.divbuttons input.nodetext {
+    display: block;
+    border-radius: 5px;
+    height: 20px;
+    text-align: center;
+}
+
+.loading {
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    display: none;
+}
